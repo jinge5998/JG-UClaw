@@ -1,0 +1,18 @@
+{
+  "name": "openclaw-version",
+  "version": "5.1.0",
+  "description": "OpenClaw U盘版版本推送服务",
+  "main": "version.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/openclaw-version.git"
+  },
+  "keywords": [
+    "openclaw",
+    "version",
+    "update",
+    "launcher"
+  ],
+  "author": "OpenClaw",
+  "license": "MIT"
+}

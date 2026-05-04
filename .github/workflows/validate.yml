@@ -1,0 +1,36 @@
+name: Update Version Check
+
+on:
+  push:
+    paths:
+      - 'version.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Validate version.json
+        run: |
+          python3 -c "
+import json
+with open('version.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            required = ['version', 'releaseDate', 'downloadUrl', 'changelog']
+            for field in required:
+                if field not in data:
+                    raise Exception(f'Missing required field: {field}')
+            print('✅ version.json is valid')
+            print(f'Version: {data[\"version\"]}')
+            print(f'Release Date: {data[\"releaseDate\"]}')
+          "
+
+      - name: Get version info
+        id: version
+        run: |
+          VERSION=$(cat version.json | jq -r '.version')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "### 🚀 Version $VERSION" >> $GITHUB_STEP_SUMMARY
+          cat version.json | jq -r '.changelog[] | "- \(.type): \(.description)"' >> $GITHUB_STEP_SUMMARY
