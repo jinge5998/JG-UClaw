@@ -1,18 +1,28 @@
 {
   "name": "openclaw-version",
   "version": "5.1.0",
-  "description": "OpenClaw U盘版版本推送服务",
+  "description": "OpenClaw U盘版版本推送服务 - 用于启动器自动检查更新",
   "main": "version.json",
+  "scripts": {
+    "validate": "node -e \"const v=require('./version.json');console.log('Version:',v.version);\"",
+    "check": "curl -s https://cdn.jsdelivr.net/gh/jinge5998/openclaw-version@main/version.json | jq ."
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/openclaw-version.git"
+    "url": "https://github.com/jinge5998/openclaw-version.git"
   },
   "keywords": [
     "openclaw",
     "version",
     "update",
-    "launcher"
+    "launcher",
+    "ai-assistant",
+    "portable"
   ],
-  "author": "OpenClaw",
-  "license": "MIT"
+  "author": "jinge5998",
+  "license": "MIT",
+  "homepage": "https://github.com/jinge5998/openclaw-version#readme",
+  "bugs": {
+    "url": "https://github.com/jinge5998/openclaw-version/issues"
+  }
 }

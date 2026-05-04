@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Validate JSON
+        run: |
+          echo "Validating version.json..."
+          jq empty version.json
+          echo "✅ JSON is valid"
+          
+      - name: Check required fields
+        run: |
+          echo "Checking required fields..."
+          jq -e '.version' version.json > /dev/null || (echo "❌ Missing: version" && exit 1)
+          jq -e '.releaseDate' version.json > /dev/null || (echo "❌ Missing: releaseDate" && exit 1)
+          jq -e '.downloadUrl' version.json > /dev/null || (echo "❌ Missing: downloadUrl" && exit 1)
+          jq -e '.changelog' version.json > /dev/null || (echo "❌ Missing: changelog" && exit 1)
+          echo "✅ All required fields present"
+          
+      - name: Display version info
+        run: |
+          echo "### 📦 Version Information" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | \`$(jq -r '.version' version.json)\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Release Date | $(jq -r '.releaseDate' version.json) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Download URL | [Link]($(jq -r '.downloadUrl' version.json)) |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📝 Changelog" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          jq -r '.changelog[] | "- **\(.type)**: \(.description)"' version.json >> $GITHUB_STEP_SUMMARY
+
+  cdn-check:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: Check jsdelivr CDN
+        run: |
+          echo "Checking jsdelivr CDN..."
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" "https://cdn.jsdelivr.net/gh/jinge5998/openclaw-version@main/version.json")
+          if [ "$RESPONSE" -eq 200 ]; then
+            echo "✅ jsdelivr CDN is accessible"
+          else
+            echo "⚠️ jsdelivr CDN returned: $RESPONSE"
+          fi
