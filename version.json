@@ -1,0 +1,21 @@
+{
+  "version": "5.1.0",
+  "releaseDate": "2026-05-05",
+  "downloadUrl": "https://pan.baidu.com/s/5YFJNpblSvsDEMKCRgdKsfg",
+  "downloadPassword": "",
+  "minVersion": "4.0.0",
+  "forceUpdate": false,
+  "changelog": [
+    { "type": "新增", "description": "网络升级提醒功能，自动检测新版本" },
+    { "type": "新增", "description": "状态栏更新提示，非弹窗打扰模式" },
+    { "type": "新增", "description": "定期后台检查更新，可配置检查间隔" },
+    { "type": "新增", "description": "网络状态实时显示（在线/离线）" },
+    { "type": "新增", "description": "支持 GitHub 版本推送服务" },
+    { "type": "新增", "description": "双 URL 备份机制，提高可用性" },
+    { "type": "优化", "description": "升级按钮支持网络检查" },
+    { "type": "优化", "description": "版本检查逻辑优化，支持本地回退" },
+    { "type": "修复", "description": "修复网络请求超时处理" }
+  ],
+  "checksum": "",
+  "size": 0
+}
