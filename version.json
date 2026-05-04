@@ -3,6 +3,7 @@
   "releaseDate": "2026-05-05",
   "downloadUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
   "downloadPassword": "6hfe",
+  "fileName": "Upanban",
   "minVersion": "4.0.0",
   "forceUpdate": false,
   "changelog": [
@@ -17,5 +18,9 @@
     { "type": "修复", "description": "修复网络请求超时处理" }
   ],
   "checksum": "",
-  "size": 0
+  "size": 0,
+  "requirements": {
+    "os": "Windows 10/11",
+    "diskSpace": "500MB"
+  }
 }
