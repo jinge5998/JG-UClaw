@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 查看文档
+    url: https://github.com/jinge5998/openclaw-version#readme
+    about: 在提交问题前，请先查看项目文档
+  - name: ❓ 常见问题
+    url: https://github.com/jinge5998/openclaw-version/blob/main/FAQ.md
+    about: 查看常见问题解答
+  - name: 🔧 故障排除
+    url: https://github.com/jinge5998/openclaw-version/blob/main/TROUBLESHOOTING.md
+    about: 查看故障排除指南

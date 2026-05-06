@@ -1,26 +1,44 @@
 {
-  "version": "5.1.0",
-  "releaseDate": "2026-05-05",
-  "downloadUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
-  "downloadPassword": "6hfe",
-  "fileName": "Upanban",
-  "minVersion": "4.0.0",
-  "forceUpdate": false,
-  "changelog": [
-    { "type": "新增", "description": "网络升级提醒功能，自动检测新版本" },
-    { "type": "新增", "description": "状态栏更新提示，非弹窗打扰模式" },
-    { "type": "新增", "description": "定期后台检查更新，可配置检查间隔" },
-    { "type": "新增", "description": "网络状态实时显示（在线/离线）" },
-    { "type": "新增", "description": "支持 GitHub 版本推送服务" },
-    { "type": "新增", "description": "双 URL 备份机制，提高可用性" },
-    { "type": "优化", "description": "升级按钮支持网络检查" },
-    { "type": "优化", "description": "版本检查逻辑优化，支持本地回退" },
-    { "type": "修复", "description": "修复网络请求超时处理" }
-  ],
-  "checksum": "",
-  "size": 0,
-  "requirements": {
-    "os": "Windows 10/11",
-    "diskSpace": "500MB"
-  }
+    "version": "5.1.0",
+    "releaseDate": "2026-05-05",
+    "launcherVersion": "5.1.0",
+    "launcherFiles": [
+        {
+            "file": "U-Claw-Launcher.ps1",
+            "url": "https://github.com/jinge5998/openclaw-version/releases/download/v5.1.0/U-Claw-Launcher.ps1",
+            "backupUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
+            "backupCode": "6hfe",
+            "sha256": ""
+        },
+        {
+            "file": "启动器.bat",
+            "url": "https://github.com/jinge5998/openclaw-version/releases/download/v5.1.0/启动器.bat",
+            "backupUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
+            "backupCode": "6hfe",
+            "sha256": ""
+        }
+    ],
+    "coreFiles": [
+        {
+            "name": "OpenClaw Gateway",
+            "version": "2.0.0",
+            "required": true,
+            "files": [
+                {
+                    "file": "app/core/gateway.js",
+                    "sha256": ""
+                }
+            ],
+            "packageUrl": "https://github.com/jinge5998/openclaw-version/releases/download/v5.1.0/openclaw-core-v5.1.0.zip",
+            "packageSha256": "",
+            "backupUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
+            "backupCode": "6hfe"
+        }
+    ],
+    "changelog": {
+        "zh": "【v5.1.0 更新内容】\n1. 新增自动升级功能 - 支持一键升级启动器和核心文件\n2. 新增多源下载 - GitHub主源 + 百度网盘备用源\n3. 新增设备激活验证 - 仅已激活设备可升级\n4. 优化内存占用 - 及时释放资源\n5. 隐藏控制台窗口 - 启动更清爽\n6. 修复已知问题",
+        "en": "[v5.1.0 Changelog]\n1. Add auto-upgrade feature - One-click upgrade for launcher and core files\n2. Add multi-source download - GitHub primary + Baidu Pan backup\n3. Add device activation verification - Only activated devices can upgrade\n4. Optimize memory usage - Release resources in time\n5. Hide console window - Cleaner startup\n6. Fix known issues"
+    },
+    "minVersion": "4.0.0",
+    "required": false
 }
