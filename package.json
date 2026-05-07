@@ -1,18 +1,20 @@
 {
-  "name": "openclaw-version",
-  "version": "5.1.0",
-  "description": "OpenClaw U盘版版本推送服务 - 用于启动器自动检查更新",
+  "name": "jg-uclaw",
+  "version": "5.2.0",
+  "description": "OpenClaw UClaw 便携版 - 版本推送服务",
   "main": "version.json",
   "scripts": {
     "validate": "node -e \"const v=require('./version.json');console.log('Version:',v.version);\"",
-    "check": "curl -s https://cdn.jsdelivr.net/gh/jinge5998/openclaw-version@main/version.json | jq ."
+    "check": "curl -s https://cdn.jsdelivr.net/gh/jinge5998/JG-UClaw@main/version.json | jq .",
+    "release": "node scripts/create-release.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jinge5998/openclaw-version.git"
+    "url": "https://github.com/jinge5998/JG-UClaw.git"
   },
   "keywords": [
     "openclaw",
+    "uclaw",
     "version",
     "update",
     "launcher",
@@ -21,8 +23,8 @@
   ],
   "author": "jinge5998",
   "license": "MIT",
-  "homepage": "https://github.com/jinge5998/openclaw-version#readme",
+  "homepage": "https://github.com/jinge5998/JG-UClaw#readme",
   "bugs": {
-    "url": "https://github.com/jinge5998/openclaw-version/issues"
+    "url": "https://github.com/jinge5998/JG-UClaw/issues"
   }
 }
