@@ -1,20 +1,12 @@
-# OpenClaw 版本信息仓库
+# OpenClaw UClaw 自动升级系统
 
 <div align="center">
 
-[![Version](https://img.shields.io/badge/version-5.1.0-blue.svg?style=for-the-badge)](https://github.com/jinge5998/openclaw-version)
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/jinge5998/openclaw-version.svg?style=for-the-badge)](https://github.com/jinge5998/openclaw-version/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/jinge5998/openclaw-version.svg?style=for-the-badge)](https://github.com/jinge5998/openclaw-version/issues)
-[![GitHub Release](https://img.shields.io/github/release/jinge5998/openclaw-version.svg?style=for-the-badge)](https://github.com/jinge5998/openclaw-version/releases)
+[![Version](https://img.shields.io/badge/version-5.2.0-blue.svg)](https://github.com/jinge5998/JG-UClaw)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Auto Update](https://img.shields.io/badge/auto--update-enabled-brightgreen.svg?style=flat-square)](https://github.com/jinge5998/JG-UClaw)
 
-[![CI](https://img.shields.io/github/actions/workflow/status/jinge5998/openclaw-version/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/jinge5998/openclaw-version/actions/workflows/ci.yml)
-[![CDN Status](https://img.shields.io/website?down_color=red&down_message=offline&label=jsdelivr%20CDN&up_color=green&up_message=online&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fjinge5998%2Fopenclaw-version%40main%2Fversion.json&style=flat-square)](https://cdn.jsdelivr.net/gh/jinge5998/openclaw-version@main/version.json)
-[![Last Updated](https://img.shields.io/github/last-commit/jinge5998/openclaw-version?style=flat-square)](https://github.com/jinge5998/openclaw-version/commits/main)
-
-**OpenClaw U盘版启动器版本推送服务 - 实现自动检测更新功能**
-
-[快速开始](#-快速开始) • [文档](#-文档) • [常见问题](FAQ.md) • [故障排除](TROUBLESHOOTING.md)
+**OpenClaw UClaw 便携版 - 自动升级版本仓库**
 
 </div>
 
@@ -22,188 +14,189 @@
 
 ## 📋 项目简介
 
-本仓库用于存储 OpenClaw U盘版的版本信息，配合启动器实现以下功能：
+本仓库用于存储 OpenClaw UClaw 便携版的版本信息和升级文件，支持自动检测更新和一键升级功能。
 
-- ✅ **自动检测新版本** - 启动时自动检查更新
-- ✅ **状态栏更新提示** - 非弹窗打扰模式
-- ✅ **定期后台检查** - 可配置检查间隔
-- ✅ **网络状态实时显示** - 在线/离线状态
-- ✅ **双URL备份机制** - 提高可用性
-- ✅ **GitHub版本推送** - 支持CDN加速
+## 🔄 自动同步更新功能
 
-## 📊 当前版本
+### 工作原理
 
-| 项目 | 信息 |
-|------|------|
-| **版本号** | `5.1.0` |
-| **发布日期** | `2026-05-05` |
-| **最低版本** | `4.0.0` |
-| **许可证** | MIT |
+1. **版本检测**：启动器自动从本仓库获取最新版本信息
+2. **智能比较**：对比本地版本和网络版本，判断是否需要升级
+3. **状态提示**：在状态栏显示更新提示（非弹窗打扰）
+4. **一键升级**：用户确认后自动下载并安装更新
 
-### 📝 更新日志
+### CDN 访问地址
 
-- **新增**: 网络升级提醒功能，自动检测新版本
-- **新增**: 状态栏更新提示，非弹窗打扰模式
-- **新增**: 定期后台检查更新，可配置检查间隔
-- **新增**: 网络状态实时显示（在线/离线）
-- **新增**: 支持 GitHub 版本推送服务
-- **新增**: 双 URL 备份机制，提高可用性
-- **优化**: 升级按钮支持网络检查
-- **优化**: 版本检查逻辑优化，支持本地回退
-- **修复**: 修复网络请求超时处理
+- **jsdelivr CDN（推荐）**：
+  ```
+  https://cdn.jsdelivr.net/gh/jinge5998/JG-UClaw@main/version.json
+  ```
 
-## 🔗 快速链接
+- **GitHub Raw（备用）**：
+  ```
+  https://raw.githubusercontent.com/jinge5998/JG-UClaw/main/version.json
+  ```
 
-| 链接 | 说明 |
-|------|------|
-| [version.json](version.json) | 版本信息文件 |
-| [SETUP.md](SETUP.md) | 快速设置指南 |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | 贡献指南 |
-| [FAQ.md](FAQ.md) | 常见问题 |
-| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | 故障排除 |
+## 📦 版本文件说明
 
-## 🚀 快速开始
+### version.json
 
-### 方法一：直接使用（推荐）
-
-启动器已预配置，无需额外设置即可自动检测更新。
-
-### 方法二：Fork 后使用
-
-1. Fork 本仓库
-2. 修改启动器 `U-Claw-Launcher.ps1` 第 30-31 行：
-```powershell
-$script:NETWORK_VERSION_URL = "https://cdn.jsdelivr.net/gh/你的用户名/openclaw-version@main/version.json"
-$script:NETWORK_VERSION_URL_BACKUP = "https://raw.githubusercontent.com/你的用户名/openclaw-version/main/version.json"
-```
-
-## 📝 版本文件格式
+核心版本配置文件，包含以下字段：
 
 ```json
 {
-  "version": "5.1.0",
-  "releaseDate": "2026-05-05",
-  "downloadUrl": "https://pan.baidu.com/s/分享链接",
-  "downloadPassword": "提取密码",
-  "fileName": "Upanban",
-  "minVersion": "4.0.0",
-  "forceUpdate": false,
-  "changelog": [
-    { "type": "新增", "description": "功能描述" }
-  ],
-  "checksum": "SHA256校验码（可选）",
-  "size": 0,
-  "requirements": {
-    "os": "Windows 10/11",
-    "diskSpace": "500MB"
+  "version": "5.2.0",           // 当前版本号
+  "releaseDate": "2026-05-06",  // 发布日期
+  "downloadUrl": "百度网盘链接", // 下载地址
+  "downloadPassword": "提取码",   // 网盘提取码
+  "minVersion": "4.0.0",        // 最低兼容版本
+  "forceUpdate": false,         // 是否强制更新
+  "launcherVersion": "5.2.0",   // 启动器版本
+  "coreVersion": "2026.5.5",    // 核心版本
+  "urls": {
+    "primary": "主CDN地址",
+    "backup": "备用地址"
+  },
+  "models": {
+    "ollama": ["qwen3.5:4b", "gemma3:4b", "qwen3:4b"],
+    "cloud": ["deepseek-chat", "claude-opus-4-7", "claude-sonnet-4-6", "claude-haiku-4-5"]
   }
 }
 ```
 
-### 字段说明
+## 🚀 快速开始
 
-| 字段 | 必填 | 说明 |
-|------|:----:|------|
-| `version` | ✅ | 版本号（语义化版本） |
-| `releaseDate` | ✅ | 发布日期（YYYY-MM-DD） |
-| `downloadUrl` | ✅ | 下载链接 |
-| `downloadPassword` | ❌ | 网盘提取密码 |
-| `fileName` | ❌ | 文件名称 |
-| `minVersion` | ❌ | 最低兼容版本 |
-| `forceUpdate` | ❌ | 是否强制更新 |
-| `changelog` | ✅ | 更新日志数组 |
-| `checksum` | ❌ | SHA256校验码 |
-| `size` | ❌ | 文件大小（字节） |
-| `requirements` | ❌ | 系统要求 |
+### 1. 克隆仓库
 
-## 🔗 CDN 访问地址
-
-### jsdelivr（推荐，国内访问快）
-```
-https://cdn.jsdelivr.net/gh/jinge5998/openclaw-version@main/version.json
+```bash
+git clone https://github.com/jinge5998/JG-UClaw.git
+cd JG-UClaw
 ```
 
-### GitHub Raw（备用）
+### 2. 查看版本信息
+
+直接访问：
 ```
-https://raw.githubusercontent.com/jinge5998/openclaw-version/main/version.json
-```
-
-## 📊 更新历史
-
-| 版本 | 日期 | 说明 |
-|------|------|------|
-| [5.1.0](version.json) | 2026-05-05 | 网络升级提醒功能 |
-| 5.0.0 | 2026-05-03 | 初始版本 |
-
-## 🛠️ 发布新版本
-
-### 使用发布脚本
-```powershell
-.\发布新版本.ps1 -Version "5.2.0" -BaiduUrl "https://pan.baidu.com/s/xxx" -BaiduPassword "1234"
+https://cdn.jsdelivr.net/gh/jinge5998/JG-UClaw@main/version.json
 ```
 
-### 手动发布
-1. 修改 `version.json`
-2. 提交并推送：
+### 3. 更新版本
+
+修改 `version.json` 文件，然后提交推送即可：
+
 ```bash
 git add version.json
 git commit -m "发布 v5.2.0"
 git push
 ```
 
-### 自动发布（推荐）
-创建 Git 标签自动触发发布：
-```bash
-git tag v5.2.0
-git push origin v5.2.0
+## 🔧 发布新版本
+
+### 方式一：手动更新
+
+1. 修改 `version.json` 中的版本信息
+2. 更新下载链接和提取码
+3. 提交并推送到 GitHub
+
+### 方式二：使用同步脚本（推荐）
+
+运行 `upload-to-github.ps1` 脚本：
+
+```powershell
+# 正常同步
+.\upload-to-github.ps1 -CommitMessage "发布 v5.2.0"
+
+# 模拟运行（不实际修改）
+.\upload-to-github.ps1 -DryRun
+
+# 详细输出
+.\upload-to-github.ps1 -Verbose
 ```
 
-GitHub Actions 会自动：
-- ✅ 验证版本信息
-- ✅ 创建 GitHub Release
-- ✅ 更新 latest 标签
-- ✅ 生成发布说明
+### 方式三：GitHub Actions 自动发布
 
-## 📁 相关仓库
+1. 创建 Git Tag：
+   ```bash
+   git tag v5.2.0
+   git push origin v5.2.0
+   ```
 
-| 仓库 | 说明 |
-|------|------|
-| OpenClaw U盘版 | 便携式 AI 助手 |
+2. GitHub Actions 自动：
+   - ✅ 验证版本信息
+   - ✅ 创建 Release
+   - ✅ 更新文档
+
+## 📊 当前版本状态
+
+| 项目 | 值 |
+|------|-----|
+| **启动器版本** | 5.2.0 |
+| **核心版本** | 2026.5.5 |
+| **发布日期** | 2026-05-06 |
+| **最低兼容** | 4.0.0 |
+
+## 🤖 支持的模型
+
+### 本地 Ollama 模型
+
+| 模型 | 参数量 | 上下文窗口 | 特性 |
+|------|--------|-----------|------|
+| qwen3.5:4b | 4.7B | 262K | 视觉/工具/思考 |
+| gemma3:4b | 4.3B | 131K | 视觉 |
+| qwen3:4b | 4.0B | 262K | 工具/思考 |
+
+### 云端模型
+
+| 提供商 | 模型 |
+|--------|------|
+| DeepSeek | deepseek-chat |
+| 绝舟 | claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5 |
+
+## 🔗 相关链接
+
+- [百度网盘下载](https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw)
+- [提取码] 6hfe
+
+## 📝 目录结构
+
+```
+JG-UClaw/
+├── version.json           # 核心版本配置文件
+├── models.json            # 模型配置文件
+├── models-optimized.json  # 优化模型配置
+├── README.md              # 本说明文档
+├── CHANGELOG.md           # 更新日志
+├── LICENSE                # MIT 许可证
+└── .github/
+    └── workflows/         # GitHub Actions 工作流
+        ├── release.yml    # 自动发布工作流
+        └── ci.yml         # 持续集成
+```
+
+## 🔒 安全特性
+
+- ✅ 设备激活验证
+- ✅ 升级前自动备份
+- ✅ 失败自动回滚
+- ✅ 文件完整性校验
+
+## 📞 支持
+
+- 🐛 [提交问题](https://github.com/jinge5998/JG-UClaw/issues)
+- 📖 [查看文档](README.md)
+- 🔧 [故障排除](TROUBLESHOOTING.md)
+
+---
 
 ## 🤝 贡献
 
 欢迎提交 Issue 和 Pull Request！
 
-详见 [CONTRIBUTING.md](CONTRIBUTING.md)
-
-### 贡献者
-
-感谢所有贡献者！
-
-[![Contributors](https://img.shields.io/github/contributors/jinge5998/openclaw-version.svg?style=flat-square)](https://github.com/jinge5998/openclaw-version/graphs/contributors)
-
-## 📄 许可证
-
-[MIT License](LICENSE)
-
-## 📞 支持
-
-- 📖 [文档](README.md)
-- ❓ [常见问题](FAQ.md)
-- 🔧 [故障排除](TROUBLESHOOTING.md)
-- 🐛 [提交问题](https://github.com/jinge5998/openclaw-version/issues)
-
-## ⭐ Star History
-
-如果这个项目对你有帮助，请给一个 Star！
-
-[![Star History Chart](https://api.star-history.com/svg?repos=jinge5998/openclaw-version&type=Date)](https://star-history.com/#jinge5998/openclaw-version&Date)
-
 ---
 
 <div align="center">
 
-**OpenClaw U盘版** - 便携式 AI 助手
+**OpenClaw UClaw** - 便携式 AI 助手
 
 Made with ❤️ by OpenClaw Team
 

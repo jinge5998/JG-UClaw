@@ -1,44 +1,41 @@
 {
-    "version": "5.1.0",
-    "releaseDate": "2026-05-05",
-    "launcherVersion": "5.1.0",
-    "launcherFiles": [
-        {
-            "file": "U-Claw-Launcher.ps1",
-            "url": "https://github.com/jinge5998/openclaw-version/releases/download/v5.1.0/U-Claw-Launcher.ps1",
-            "backupUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
-            "backupCode": "6hfe",
-            "sha256": ""
-        },
-        {
-            "file": "启动器.bat",
-            "url": "https://github.com/jinge5998/openclaw-version/releases/download/v5.1.0/启动器.bat",
-            "backupUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
-            "backupCode": "6hfe",
-            "sha256": ""
-        }
-    ],
-    "coreFiles": [
-        {
-            "name": "OpenClaw Gateway",
-            "version": "2.0.0",
-            "required": true,
-            "files": [
-                {
-                    "file": "app/core/gateway.js",
-                    "sha256": ""
-                }
-            ],
-            "packageUrl": "https://github.com/jinge5998/openclaw-version/releases/download/v5.1.0/openclaw-core-v5.1.0.zip",
-            "packageSha256": "",
-            "backupUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
-            "backupCode": "6hfe"
-        }
-    ],
-    "changelog": {
-        "zh": "【v5.1.0 更新内容】\n1. 新增自动升级功能 - 支持一键升级启动器和核心文件\n2. 新增多源下载 - GitHub主源 + 百度网盘备用源\n3. 新增设备激活验证 - 仅已激活设备可升级\n4. 优化内存占用 - 及时释放资源\n5. 隐藏控制台窗口 - 启动更清爽\n6. 修复已知问题",
-        "en": "[v5.1.0 Changelog]\n1. Add auto-upgrade feature - One-click upgrade for launcher and core files\n2. Add multi-source download - GitHub primary + Baidu Pan backup\n3. Add device activation verification - Only activated devices can upgrade\n4. Optimize memory usage - Release resources in time\n5. Hide console window - Cleaner startup\n6. Fix known issues"
-    },
-    "minVersion": "4.0.0",
-    "required": false
+  "version": "5.2.0",
+  "releaseDate": "2026-05-06",
+  "downloadUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
+  "downloadPassword": "6hfe",
+  "fileName": "Upanban",
+  "minVersion": "4.0.0",
+  "forceUpdate": false,
+  "launcherVersion": "5.2.0",
+  "coreVersion": "2026.5.5",
+  "changelog": [
+    { "type": "新增", "description": "OpenClaw 核心升级到 2026.5.5 版本" },
+    { "type": "新增", "description": "模型配置同步更新，支持视觉/工具/思考能力" },
+    { "type": "新增", "description": "qwen3.5:4b 支持 262K 上下文窗口" },
+    { "type": "新增", "description": "gemma3:4b 支持 131K 上下文窗口和视觉" },
+    { "type": "新增", "description": "qwen3:4b 支持 262K 上下文窗口和思考" },
+    { "type": "优化", "description": "完善 GitHub 同步更新功能" },
+    { "type": "优化", "description": "模型参数与本地 Ollama 实际配置同步" }
+  ],
+  "checksum": "",
+  "size": 0,
+  "requirements": {
+    "os": "Windows 10/11",
+    "diskSpace": "500MB",
+    "network": true
+  },
+  "update": {
+    "autoCheck": true,
+    "checkInterval": 24,
+    "backupBeforeUpdate": true,
+    "rollbackOnFailure": true
+  },
+  "urls": {
+    "primary": "https://cdn.jsdelivr.net/gh/jinge5998/JG-UClaw@main/version.json",
+    "backup": "https://raw.githubusercontent.com/jinge5998/JG-UClaw/main/version.json"
+  },
+  "models": {
+    "ollama": ["qwen3.5:4b", "gemma3:4b", "qwen3:4b"],
+    "cloud": ["deepseek-chat", "claude-opus-4-7", "claude-sonnet-4-6", "claude-haiku-4-5"]
+  }
 }
