@@ -22,17 +22,17 @@ Ollama 是一款本地大模型运行工具，支持：
 - ✅ 支持模型量化，减小内存占用
 - ✅ 与 OpenClaw 无缝集成
 
-### 推荐的中大模型
+### 推荐的中大模型（2026.05.12 更新）
 
-| 模型 | 参数量 | 内存需求 | 适用场景 |
-|------|--------|----------|----------|
-| **qwen2.5:7b** | 7B | 6GB+ | 日常对话、代码编写 |
-| **qwen2.5:14b** | 14B | 12GB+ | 专业写作、复杂推理 |
-| **qwen2.5:32b** | 32B | 24GB+ | 高质量输出、深度分析 |
-| **llama3.1:8b** | 8B | 8GB+ | 通用对话、多语言 |
-| **llama3.1:70b** | 70B | 48GB+ | 高质量生成、专业领域 |
-| **gemma4:9b** | 9B | 10GB+ | 指令遵循、推理 |
-| **deepseek-r1:14b** | 14B | 16GB+ | 深度推理、数学问题 |
+| 模型 | 参数量 | 内存需求 | 适用场景 | 特点 |
+|------|--------|----------|----------|------|
+| **qwen4:7b** | 7B | 6GB+ | 日常对话、代码编写 | 最新Qwen4系列，推理增强 |
+| **qwen3.5:14b** | 14B | 12GB+ | 专业写作、复杂推理 | 视觉/工具/思考 |
+| **qwen3:32b** | 32B | 24GB+ | 高质量输出、深度分析 | 工具/思考能力 |
+| **llama4:7b** | 7B | 8GB+ | 通用对话、多语言 | 最新Llama4系列 |
+| **llama4:70b** | 70B | 48GB+ | 高质量生成、专业领域 | 极速推理 |
+| **gemma4:9b** | 9B | 10GB+ | 指令遵循、推理 | 视觉支持 |
+| **deepseek-v3.2:14b** | 14B | 16GB+ | 深度推理、数学问题 | 2025年12月发布 |
 
 ---
 
@@ -103,13 +103,15 @@ curl http://localhost:11434/api/tags
 # 查看当前已安装的模型
 ollama list
 
-# 拉取模型（以 qwen2.5:7b 为例）
-ollama pull qwen2.5:7b
+# 拉取模型（以 qwen4:7b 为例）
+ollama pull qwen4:7b
 
 # 拉取其他推荐模型
-ollama pull llama3.1:8b
-ollama pull qwen2.5:14b
-ollama pull deepseek-r1:14b
+ollama pull qwen4:7b
+ollama pull qwen3.5:14b
+ollama pull qwen3:32b
+ollama pull llama4:70b
+ollama pull deepseek-v3.2:14b
 ollama pull gemma4:9b
 ```
 
@@ -124,8 +126,8 @@ ollama pull gemma4:9b
 
 ```powershell
 # 拉取指定标签版本
-ollama pull qwen2.5:7b-instruct
-ollama pull qwen2.5:14b-chat
+ollama pull qwen4:7b
+ollama pull qwen3.5:14b
 ```
 
 ---

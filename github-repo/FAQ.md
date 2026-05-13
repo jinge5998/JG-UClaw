@@ -110,9 +110,9 @@
 
 ### Q: 支持哪些 AI 模型？
 
-**A:** OpenClaw 支持 85+ 模型：
-- **国内模型**：豆包、智谱GLM、通义千问、文心一言等
-- **国际模型**：GPT-4、Claude、Gemini、Mistral等
+**A:** OpenClaw 支持 85+ 模型（2026.05.12 更新）：
+- **国内模型**：DeepSeek-V4/V3.2、豆包GLM、通义千问Qwen4、文心ERNIE-5.0、Kimi K2-Thinking、MiniMax-M2.1等
+- **国际模型**：GPT-5.5/5.4/5.3/5.2、Claude Opus 4.7/4.6、Gemini 3.1 Pro/3.0 Pro、Grok 4.1/4、Mistral Large 3等
 - **本地模型**：Ollama 本地部署模型
 
 ### Q: 如何添加自定义模型？

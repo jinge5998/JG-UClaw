@@ -1,21 +1,35 @@
 {
-  "version": "5.2.0",
-  "releaseDate": "2026-05-06",
+  "version": "5.3.0",
+  "releaseDate": "2026-05-13",
   "downloadUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
   "downloadPassword": "6hfe",
   "fileName": "Upanban",
   "minVersion": "4.0.0",
   "forceUpdate": false,
-  "launcherVersion": "5.2.0",
-  "coreVersion": "2026.5.5",
+  "launcherVersion": "5.3.0",
+  "coreVersion": "2026.5.7",
+  "coreUrl": "https://github.com/dongsheng123132/u-claw/releases/download/v5.3.0/openclaw-core-2026.5.7.zip",
+  "coreFallbackUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
+  "coreDownloadPassword": "6hfe",
+  "coreSha256": "",
+  "coreFiles": [
+    {
+      "path": "node_modules/openclaw",
+      "description": "OpenClaw 核心模块"
+    },
+    {
+      "path": "node_modules/@openclaw",
+      "description": "OpenClaw 官方模块"
+    }
+  ],
   "changelog": [
-    { "type": "新增", "description": "OpenClaw 核心升级到 2026.5.5 版本" },
-    { "type": "新增", "description": "模型配置同步更新，支持视觉/工具/思考能力" },
-    { "type": "新增", "description": "qwen3.5:4b 支持 262K 上下文窗口" },
-    { "type": "新增", "description": "gemma3:4b 支持 131K 上下文窗口和视觉" },
-    { "type": "新增", "description": "qwen3:4b 支持 262K 上下文窗口和思考" },
-    { "type": "优化", "description": "完善 GitHub 同步更新功能" },
-    { "type": "优化", "description": "模型参数与本地 Ollama 实际配置同步" }
+    { "type": "新增", "description": "OpenClaw 核心升级到 2026.5.7 版本" },
+    { "type": "新增", "description": "AI模型列表更新至2026.05.12最新版本" },
+    { "type": "新增", "description": "支持GPT-5.5、Claude Opus 4.7、Gemini 3.1 Pro等最新模型" },
+    { "type": "新增", "description": "支持DeepSeek-V3.2、Kimi K2-Thinking、GLM-4.7等国产最新模型" },
+    { "type": "新增", "description": "GitHub仓库迁移至 dongsheng123132/u-claw" },
+    { "type": "优化", "description": "完善模型配置和兼容性检查" },
+    { "type": "优化", "description": "修复U盘文件系统符号链接问题" }
   ],
   "checksum": "",
   "size": 0,
@@ -31,11 +45,11 @@
     "rollbackOnFailure": true
   },
   "urls": {
-    "primary": "https://cdn.jsdelivr.net/gh/jinge5998/JG-UClaw@main/version.json",
-    "backup": "https://raw.githubusercontent.com/jinge5998/JG-UClaw/main/version.json"
+    "primary": "https://cdn.jsdelivr.net/gh/dongsheng123132/u-claw@main/version.json",
+    "backup": "https://raw.githubusercontent.com/dongsheng123132/u-claw/main/version.json"
   },
   "models": {
     "ollama": ["qwen3.5:4b", "gemma3:4b", "qwen3:4b"],
-    "cloud": ["deepseek-chat", "claude-opus-4-7", "claude-sonnet-4-6", "claude-haiku-4-5"]
+    "cloud": ["deepseek-chat", "claude-opus-4-7", "claude-sonnet-4-6", "claude-haiku-4-5", "gpt-5.5", "gemini-3.1-pro"]
   }
 }

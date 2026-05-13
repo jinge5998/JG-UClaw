@@ -2,9 +2,9 @@
 
 <div align="center">
 
-[![Version](https://img.shields.io/badge/version-5.2.0-blue.svg)](https://github.com/jinge5998/JG-UClaw)
+[![Version](https://img.shields.io/badge/version-5.3.0-blue.svg)](https://github.com/dongsheng123132/u-claw)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Auto Update](https://img.shields.io/badge/auto--update-enabled-brightgreen.svg?style=flat-square)](https://github.com/jinge5998/JG-UClaw)
+[![Auto Update](https://img.shields.io/badge/auto--update-enabled-brightgreen.svg?style=flat-square)](https://github.com/dongsheng123132/u-claw)
 
 **OpenClaw UClaw 便携版 - 自动升级版本仓库**
 
@@ -29,7 +29,7 @@
 
 - **jsdelivr CDN（推荐）**：
   ```
-  https://cdn.jsdelivr.net/gh/jinge5998/JG-UClaw@main/version.json
+  https://cdn.jsdelivr.net/gh/dongsheng123132/u-claw@main/version.json
   ```
 
 - **GitHub Raw（备用）**：
@@ -45,14 +45,14 @@
 
 ```json
 {
-  "version": "5.2.0",           // 当前版本号
-  "releaseDate": "2026-05-06",  // 发布日期
+  "version": "5.3.0",           // 当前版本号
+  "releaseDate": "2026-05-13",  // 发布日期
   "downloadUrl": "百度网盘链接", // 下载地址
   "downloadPassword": "提取码",   // 网盘提取码
   "minVersion": "4.0.0",        // 最低兼容版本
   "forceUpdate": false,         // 是否强制更新
-  "launcherVersion": "5.2.0",   // 启动器版本
-  "coreVersion": "2026.5.5",    // 核心版本
+  "launcherVersion": "5.3.0",   // 启动器版本
+  "coreVersion": "2026.5.7",    // 核心版本
   "urls": {
     "primary": "主CDN地址",
     "backup": "备用地址"
@@ -69,8 +69,8 @@
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/jinge5998/JG-UClaw.git
-cd JG-UClaw
+git clone https://github.com/dongsheng123132/u-claw.git
+cd u-claw
 ```
 
 ### 2. 查看版本信息
@@ -86,7 +86,7 @@ https://cdn.jsdelivr.net/gh/jinge5998/JG-UClaw@main/version.json
 
 ```bash
 git add version.json
-git commit -m "发布 v5.2.0"
+git commit -m "发布 v5.3.0"
 git push
 ```
 
@@ -104,7 +104,7 @@ git push
 
 ```powershell
 # 正常同步
-.\upload-to-github.ps1 -CommitMessage "发布 v5.2.0"
+.\upload-to-github.ps1 -CommitMessage "发布 v5.3.0"
 
 # 模拟运行（不实际修改）
 .\upload-to-github.ps1 -DryRun
@@ -117,8 +117,8 @@ git push
 
 1. 创建 Git Tag：
    ```bash
-   git tag v5.2.0
-   git push origin v5.2.0
+   git tag v5.3.0
+   git push origin v5.3.0
    ```
 
 2. GitHub Actions 自动：
@@ -130,12 +130,12 @@ git push
 
 | 项目 | 值 |
 |------|-----|
-| **启动器版本** | 5.2.0 |
-| **核心版本** | 2026.5.5 |
-| **发布日期** | 2026-05-06 |
+| **启动器版本** | 5.3.0 |
+| **核心版本** | 2026.5.7 |
+| **发布日期** | 2026-05-13 |
 | **最低兼容** | 4.0.0 |
 
-## 🤖 支持的模型
+## 🤖 支持的模型（2026.05.12 更新）
 
 ### 本地 Ollama 模型
 
@@ -147,10 +147,19 @@ git push
 
 ### 云端模型
 
-| 提供商 | 模型 |
-|--------|------|
-| DeepSeek | deepseek-chat |
-| 绝舟 | claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5 |
+| 提供商 | 模型 | 特点 |
+|--------|------|------|
+| **DeepSeek** | deepseek-chat, DeepSeek-V3.2, DeepSeek-V3.2-Speciale | 性价比高，推理增强 |
+| **OpenAI** | GPT-5.5, GPT-5.4-Thinking, GPT-5.3, GPT-5.2 | 行业标杆 |
+| **Anthropic** | Claude Opus 4.7, Claude 4.6, Claude Sonnet 4.5 | 安全可靠 |
+| **Google** | Gemini 3.1 Pro, Gemini 3.0 Pro, Gemini 3 Flash | 多模态，1M上下文 |
+| **xAI** | Grok 4.1, Grok 4, Grok 3.5 | 实时信息，免费Thinking |
+| **智谱 GLM** | GLM-5, GLM-4.7, GLM-4.5-Flash | 国产领先，开源SOTA |
+| **通义千问** | Qwen4-235B, Qwen4, Qwen-Long | 1M上下文 |
+| **月之暗面** | Kimi K2-Thinking, Kimi 2.0 | Thinking世界第— |
+| **百度文心** | ERNIE-5.0-Preview, ERNIE-X2 | 全球并列第二 |
+| **MiniMax** | MiniMax-M2.1, MiniMax-M2.5 | 多语言编程SOTA |
+| **Mistral** | Mistral Large 3, Mistral 3 | 欧洲领先 |
 
 ## 🔗 相关链接
 
