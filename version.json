@@ -1,14 +1,14 @@
 {
-  "version": "5.0.0.5",
-  "releaseDate": "2026-05-27",
+  "version": "5.0.0.6",
+  "releaseDate": "2026-05-30",
   "downloadUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
   "downloadPassword": "6hfe",
   "fileName": "Upanban",
   "minVersion": "4.0.0",
   "forceUpdate": false,
-  "launcherVersion": "5.0.0.5",
+  "launcherVersion": "5.0.0.6",
   "coreVersion": "2026.5.7",
-  "coreUrl": "https://github.com/dongsheng123132/u-claw/releases/download/v5.0.0.5/openclaw-core-2026.5.7.zip",
+  "coreUrl": "https://github.com/dongsheng123132/u-claw/releases/download/v5.0.0.6/openclaw-core-2026.5.7.zip",
   "coreFallbackUrl": "https://pan.baidu.com/s/1zgtbt1tDRTFGhCnKpRXmAw",
   "coreDownloadPassword": "6hfe",
   "coreSha256": "",
@@ -23,6 +23,9 @@
     }
   ],
   "changelog": [
+    { "type": "修复", "description": "启动器 GUI 无法显示问题，修复变量作用域不一致" },
+    { "type": "修复", "description": "硬件ID获取卡住问题，改用轻量级命令" },
+    { "type": "修复", "description": "重复控制台隐藏导致的初始化问题" },
     { "type": "新增", "description": "便携版本支持，可在任意电脑直接运行" },
     { "type": "优化", "description": "精简文件结构，移除不必要的备份和日志文件" },
     { "type": "修复", "description": "API Key 保存问题，更换后不再跳回原值" },
